@@ -1,55 +1,41 @@
-// import React from 'react';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+import  Icon  from 'react-native-vector-icons/FontAwesome5';
+
+import Book from '../screens/Book';
+import Info from '../screens/Info';
 
 
-// import { FontAwesome } from "@expo/vector-icons";
-// import Book from '../screens/Book';
+const Tab = createBottomTabNavigator();
 
-
-// const Tab = createBottomTabNavigator();
-
-// export default function BottomTab() {
-//     return (
-//         <Tab.Navigator screenOptions={{ tabBarActiveTintColor: 'tomato', tabBarInactiveTintColor: 'gray' }}>
-//           <Tab.Screen
-//             name="Book"
-//             component={Book}
-//             options={{
-//               tabBarLabel: "book",
-//               tabBarIcon: ({ color, size }) => ( <FontAwesome name="book" color={color} size={size} /> ),
-//               headerShown : false,
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Ant"
-//             component={Ant}
-//             options={{
-//               tabBarLabel: "window-restore",
-//               tabBarIcon: ({ color, size }) => ( <FontAwesome name="window-restore" color={color} size={size} /> ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Bird"
-//             component={Bird}
-//             options={{
-//               tabBarLabel: "money",
-//               tabBarIcon: ({ color, size }) => ( <FontAwesome name="money" color={color} size={size} /> ),
-//             }}
-//           />
-//           <Tab.Screen
-//             name="Cat"
-//             component={Cat}
-//             options={{
-//               tabBarLabel: "info",
-//               tabBarIcon: ({ color, size }) => ( <FontAwesome name="info" color={color} size={size} /> ),
-//             }}
-//           />
+export default function Tabb() {
+    return (
+        <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#cf6ffa', tabBarInactiveTintColor: 'gray' }}>
+          <Tab.Screen
+            name="Book"
+            component={Book}
+            options={{
+              tabBarLabel: "หนังสือ",
+              tabBarIcon: ({ color, size }) => ( <Icon name="book" color={color} size={size} /> ),
+              headerShown : false,
+            }}
+          />
+          <Tab.Screen
+            name="เพิ่มเติม"
+            component={Info}
+            options={{
+              tabBarLabel: "เพิ่มเติม",
+              tabBarIcon: ({ color, size }) => ( <Icon name="info" color={color} size={size} /> ),
+            }}
+          />
           
-//         </Tab.Navigator>
-//       );
+          
+        </Tab.Navigator>
+      );
     
 
-// }
+}
 
 
 {/* <View style={{ flexDirection:'column' }}><FontAwesome name="book"  size={60} color="teal" /><Text style={{ color:'#cf6ffa' }}>หนังสือ</Text></View>

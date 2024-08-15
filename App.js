@@ -3,12 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 import Book from './screens/Book';
 import { NavigationContainer } from '@react-navigation/native';
 import Info from './screens/Info';
+import Root from './navigations/Root';
 
 export default function App() {
   return (
     <NavigationContainer>
-    {/* <Book/> */}
-    <Info/>
+    {/* <Book/>
+    <Info/> */}
+    <Root/>
     </NavigationContainer>
   );
 }
