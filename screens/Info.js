@@ -1,122 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Dimensions, FlatList, Image, ScrollView, Text, View } from "react-native";
 
 import { FontAwesome } from '@expo/vector-icons';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export default function Info() {
-      const list = [
-    {
-      "id": "1",
-      "title": "ข้อความ",
-      "uri": "envelope",
-      "color":"#CCFFFF",
-    },
-    {
-      "id": "2",
-      "title": "เป้าหมายการออม",
-      "uri": "flag",
-      "color":"red",
-    },
-    {
-      "id": "3",
-      "title": "บิลประจำงวด",
-      "uri": "clock",
-      "color":"red",
-    },
-    {
-      "id": "4",
-      "title": "เตือนความจำ",
-      "uri": "bell",
-      "color":"yellow",
-    },
-    {
-      "id": "5",
-      "title": "ซื้อ Premium",
-      "uri": "crown",
-      "color":"yellow",
-    },
-    {
-        "id": "6",
-        "title": "แลกเปลี่ยนเงินตรา",
-        "uri": "coins",
-        "color":"yellow",
-      },
-      {
-        "id": "7",
-        "title": "หมวดหมู่",
-        "uri": "inbox",
-        "color":"red",
-      },
-      {
-        "id": "8",
-        "title": "สมาชิก",
-        "uri": "users",
-        "color":"blue",
-      },
-      {
-        "id": "9",
-        "title": "งบประมาณ",
-        "uri": "dollar-sign",
-        "color":"yellow",
-      },
-      {
-        "id": "10",
-        "title": "หนังสือ",
-        "uri": "book-open",
-        "color":"cream",
-      },
-      {
-        "id": "11",
-        "title": "บัญชี",
-        "uri": "credit-card",
-        "color":"#00FFFF",
-      },
-      {
-        "id": "12",
-        "title": "ค้นหา",
-        "uri": "search",
-        "color":"white",
-      },
-      {
-        "id": "13",
-        "title": "สำรองข้อมูล",
-        "uri": "google-drive",
-        "color":"blue",
-      },
-      {
-        "id": "14",
-        "title": "ส่งออก",
-        "uri": "file-excel",
-        "color":"lime",
-      },
-      {
-        "id": "15",
-        "title": "ให้คะแนน",
-        "uri": "thumbs-up",
-        "color":"blue",
-      },
-      {
-        "id": "16",
-        "title": "ข้อเสนอแนะ",
-        "uri": "file",
-        "color":"white",
-      },
-      {
-        "id": "17",
-        "title": "เกี่ยวกับ",
-        "uri": "question-circle",
-        "color":"white",
-      },
-      {
-        "id": "18",
-        "title": "การตั้งค่า",
-        "uri": "cog",
-        "color":"gray",
-      },
-    
-  ];
-  
+      
+  const [onlinemenu, setOnlineMenu] = useState([]);
+  const loadOnlineMenu = async () => {
+    try{
+        let text = await fetch('https://raw.githubusercontent.com/OpchetZ/MymoneyApp-Project/master/assets/info.json');
+        let data = await text.json();
+        console.log("Load Data : " , data);
+	  
+        setOnlineMenu(data);
+    }catch(error){
+        console.log("ERROR : " , error);
+    }
+}
+useEffect(() => {
+  loadOnlineMenu();
+}, []);
+
+
   return (
         <View style={{ flex:1 }}>
             {/* <View style={{width:600,height:50, backgroundColor:'pink',flexDirection:'row',justifyContent:'space-between' }}>
@@ -126,7 +32,7 @@ export default function Info() {
             <View style={{flex:3, backgroundColor:'white',marginTop:20,alignItems:'center' }}>
             <FlatList
                 horizontal={false}
-                data={list}
+                data={onlinemenu}
                 numColumns={3}
                 renderItem={
                     ({ item, index }) => {
