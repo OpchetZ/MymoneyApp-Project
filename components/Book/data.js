@@ -4,8 +4,8 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function Data() {
     return (
-        <View style={{ flex:1, flexDirection : 'column',height:850 }}>    
-        <View style={{ flex:1, backgroundColor:"white",borderRadius:50 }}>
+        <View style={{ flex:1, flexDirection : 'column',height:900 }}>    
+        <View style={{ flex:1, backgroundColor:"white",borderTopRightRadius:50,borderTopLeftRadius:50 }}>
         <View style={{ backgroundColor:"#f2f1f1",borderRadius:50,margin:50,justifyContent:"center",width:510,height:350 }}>
             <View style={{ flex:1,flexDirection:"row",justifyContent:"center" }}>
                 <Text style={{ alignSelf:'center',flex:2,marginLeft:50,fontSize:20 }}><FontAwesome name="chevron-left"  size={20} color="pink"/> 7/2024 <FontAwesome name="caret-down"  size={20} color="pink"/> <FontAwesome name="chevron-right"  size={20} color="gray"/></Text>
@@ -38,8 +38,8 @@ export default function Data() {
                 </View>
             </View>
         </View>
-        </View>
-        <View style={{ flex:1, backgroundColor:"white",marginTop:-50 }}>
+        
+        
             <View style={{  backgroundColor:"#f2f1f1",borderRadius:50,margin:50,justifyContent:"space-around",width:510,height:100 }}>
                 <View style={{ flexDirection:'row',justifyContent:'space-around' }}>
                     <Text style={{ fontSize:15 }}><FontAwesome name="caret-down"  size={20} color="pink"/> พฤ. 11/7</Text>
@@ -58,7 +58,7 @@ export default function Data() {
             <View style={{ alignItems:"center",alignSelf:"center",marginBottom:20 }}>
                 <FontAwesome name="pencil"  size={60} color="teal"/></View>
             </View>
-        </View>
+            </View>
         
       
       

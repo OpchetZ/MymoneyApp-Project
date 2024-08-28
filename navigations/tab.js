@@ -11,13 +11,13 @@ const Tab = createBottomTabNavigator();
 
 export default function Tabb() {
     return (
-        <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#cf6ffa', tabBarInactiveTintColor: 'gray' }}>
+        <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#cf6ffa', tabBarInactiveTintColor: 'gray',tabBarStyle:{ height:75},tabBarLabelStyle:{ fontSize:20 }}}>
           <Tab.Screen
             name="Book"
             component={Book}
             options={{
               tabBarLabel: "หนังสือ",
-              tabBarIcon: ({ color, size }) => ( <Icon name="book" color={color} size={size} /> ),
+              tabBarIcon: ({ color }) => ( <Icon name="book" color={color} size={50} /> ),
               headerShown : false,
             }}
           />
@@ -26,7 +26,8 @@ export default function Tabb() {
             component={Info}
             options={{
               tabBarLabel: "เพิ่มเติม",
-              tabBarIcon: ({ color, size }) => ( <Icon name="info" color={color} size={size} /> ),
+              tabBarIcon: ({ color }) => ( <Icon name="info" color={color} size={50} /> ),
+              
             }}
           />
           

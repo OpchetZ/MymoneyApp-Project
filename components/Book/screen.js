@@ -4,7 +4,7 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function Screen() {
     return (
-        <View style={{ flex : 1 , flexDirection : 'row'}}>    
+        <View style={{ flex : 1 , flexDirection : 'row',marginTop:25}}>    
       <FontAwesome name="search"  size={30} color="white" />   
       <View style={{ flex:1,backgroundColor:"pink",width:100,height:30,borderRadius:25,justifyContent:"center",flexDirection:"row"}}>
       
