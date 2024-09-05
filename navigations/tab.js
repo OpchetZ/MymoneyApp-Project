@@ -5,13 +5,15 @@ import  Icon  from 'react-native-vector-icons/FontAwesome5';
 
 import Book from '../screens/Book';
 import Info from '../screens/Info';
+import Wallet from '../screens/wallet';
+import Chart from '../screens/chart';
 
 
 const Tab = createBottomTabNavigator();
 
 export default function Tabb() {
     return (
-        <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#cf6ffa', tabBarInactiveTintColor: 'gray',tabBarStyle:{ height:75},tabBarLabelStyle:{ fontSize:20 }}}>
+        <Tab.Navigator screenOptions={{ tabBarActiveTintColor: '#cf6ffa', tabBarInactiveTintColor: 'gray',tabBarStyle:{ height:90},tabBarLabelStyle:{ fontSize:20 }}}>
           <Tab.Screen
             name="Book"
             component={Book}
@@ -19,6 +21,24 @@ export default function Tabb() {
               tabBarLabel: "หนังสือ",
               tabBarIcon: ({ color }) => ( <Icon name="book" color={color} size={50} /> ),
               headerShown : false,
+            }}
+          />
+          <Tab.Screen
+            name="กระเป๋าเงิน"
+            component={Wallet}
+            options={{
+              tabBarLabel: "กระเป๋าเงิน",
+              tabBarIcon: ({ color }) => ( <Icon name="wallet" color={color} size={50} /> ),
+              
+            }}
+          />
+          <Tab.Screen
+            name="การวิเคราะห์"
+            component={Chart}
+            options={{
+              tabBarLabel: "การวิเคราะห์",
+              tabBarIcon: ({ color }) => ( <Icon name="chart-pie" color={color} size={50} /> ),
+              
             }}
           />
           <Tab.Screen
@@ -30,6 +50,7 @@ export default function Tabb() {
               
             }}
           />
+          
           
           
         </Tab.Navigator>
