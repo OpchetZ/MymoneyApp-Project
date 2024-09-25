@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "title": "อาหาร",
+      "uri": "food",
+      "color":"#16f787"
+    },
+    {
+      "id": "2",
+      "title": "ค่ารถ",
+      "uri": "taxi",
+      "color":"yellow"
+    },
+    {
+      "id": "3",
+      "title": "ค่าเกม",
+      "uri": "gamepad-variant",
+      "color":"gray"
+    },
+    {
+      "id": "4",
+      "title": "ช็อปปิ้ง",
+      "uri": "cart",
+      "color":"gray"
+    }
+    
+  ]
